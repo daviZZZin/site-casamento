@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. Contagem Regressiva ---
     const countDownDate = new Date("Jun 27, 2026 19:30:00").getTime();
 
-    const x = setInterval(function() {
+    const x = setInterval(function () {
         const now = new Date().getTime();
         const distance = countDownDate - now;
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2.5 Máscara de WhatsApp ---
     const whatsappInput = document.getElementById('whatsapp');
-    whatsappInput.addEventListener('input', function(e) {
+    whatsappInput.addEventListener('input', function (e) {
         let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
         if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos (DDD + 9 dígitos)
 
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (value.length > 10) {
             value = `${value.slice(0, 10)}-${value.slice(10)}`;
         }
-        
+
         e.target.value = value;
     });
 
@@ -108,12 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Usando FormSubmit para enviar o email silenciosamente
         fetch("https://formsubmit.co/ajax/daviglima2@gmail.com", {
             method: "POST",
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
                 Assunto: `RSVP - ${name}`,
+                _cc: "enny.sara.ferreira@gmail.com",
                 Nome: name,
                 WhatsApp: whatsappNumber,
                 Comparecera: attendance === 'sim' ? 'Sim' : 'Não',
@@ -124,18 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 Observacoes: message || 'Nenhuma'
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            // Mostra mensagem de sucesso na tela e esconde o form
-            rsvpForm.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
-        })
-        .catch(error => {
-            console.error('Erro ao enviar:', error);
-            alert("Houve um erro ao enviar sua confirmação. Por favor, tente novamente.");
-            submitBtn.innerText = originalBtnText;
-            submitBtn.disabled = false;
-        });
+            .then(response => response.json())
+            .then(data => {
+                // Mostra mensagem de sucesso na tela e esconde o form
+                rsvpForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar:', error);
+                alert("Houve um erro ao enviar sua confirmação. Por favor, tente novamente.");
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
     });
 
 
