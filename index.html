@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento - Sara & Davi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="save-the-date">Save the Date</div>
+            <h1 class="names">Sara <br><span>&</span><br> Davi</h1>
+            <p class="date">27 . 06 . 2026</p>
+            <div class="scroll-down">
+                <a href="#mensagem"><i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mensagem Inicial -->
+    <section id="mensagem" class="section message-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Mensagem Inicial</h2>
+            <div class="divider">
+                <span><i class="fa-solid fa-heart"></i></span>
+            </div>
+            <p class="message-text">
+                Nosso jantar está chegando e não poderíamos estar mais animados para compartilhar com a nossa família e
+                amigos um dos dias mais especiais das nossas vidas! Queremos muito sua presença neste dia tão
+                importante!
+            </p>
+        </div>
+    </section>
+
+    <!-- Cerimônia e Recepção -->
+    <section id="local" class="section details-section fade-in">
+        <div class="container">
+            <div class="details-card glass-panel">
+                <i class="fa-solid fa-rings-wedding icon-large"></i>
+                <div class="icon-ring">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3233/3233483.png" alt="Wedding Arch"
+                        class="wedding-icon">
+                </div>
+                <h3>Cerimônia e Recepção</h3>
+                <p class="datetime"><strong>27/06/2026 às 19:30</strong></p>
+                <p class="address">Av. Milão, 1999 - Res. Eldorado</p>
+                <a href="https://www.google.com/maps/place/Esmeralda+Condom%C3%ADnio-Clube/@-16.707098,-49.3268061,20.21z/data=!4m15!1m8!3m7!1s0x935ef66064d955cd:0x3e15dac95a610609!2sAv.+Mil%C3%A3o,+1999+-+Res.+Eldorado,+Goi%C3%A2nia+-+GO,+74367-635!3b1!8m2!3d-16.7092965!4d-49.3267849!16s%2Fg%2F11c1_mkh2m!3m5!1s0x935ef66106257b01:0x68d78db186e3f0e8!8m2!3d-16.7070101!4d-49.3263451!16s%2Fg%2F11btx5xn09?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-map-location-dot"></i> Ver no Mapa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contagem Regressiva -->
+    <section id="contagem" class="section countdown-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Contagem Regressiva</h2>
+            <div class="divider">
+                <span><i class="fa-solid fa-clock"></i></span>
+            </div>
+            <p class="subtitle">27/06/2026 - 19:30</p>
+
+            <div class="countdown-wrapper">
+                <div class="countdown-item glass-panel">
+                    <span id="days" class="number">00</span>
+                    <span class="label">DIAS</span>
+                </div>
+                <div class="countdown-item glass-panel">
+                    <span id="hours" class="number">00</span>
+                    <span class="label">HORAS</span>
+                </div>
+                <div class="countdown-item glass-panel">
+                    <span id="minutes" class="number">00</span>
+                    <span class="label">MINUTOS</span>
+                </div>
+                <div class="countdown-item glass-panel">
+                    <span id="seconds" class="number">00</span>
+                    <span class="label">SEGUNDOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Presentes -->
+    <section id="presentes" class="section gifts-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Lista de Presentes</h2>
+            <div class="divider">
+                <span><i class="fa-solid fa-gift"></i></span>
+            </div>
+            <p class="message-text">Sua presença é o nosso maior presente! Mas se desejar nos abençoar com algo a mais,
+                disponibilizamos nossa chave PIX abaixo:</p>
+
+            <div class="pix-card glass-panel">
+                <i class="fa-brands fa-pix pix-icon"></i>
+                <p>Chave PIX (CPF):</p>
+                <div class="pix-key-container">
+                    <span id="pix-key" class="pix-key">70682781169</span>
+                    <button id="copy-btn" class="btn-copy" aria-label="Copiar chave PIX">
+                        <i class="fa-regular fa-copy"></i> Copiar
+                    </button>
+                </div>
+                <p class="copy-feedback" id="copy-feedback">Chave copiada com sucesso!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section rsvp-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Confirmação de Presença</h2>
+            <div class="divider">
+                <span><i class="fa-solid fa-envelope-open-text"></i></span>
+            </div>
+            <p class="message-text mb-4">Por favor, confirme sua presença até o dia 27/05/2026.</p>
+
+            <div class="form-wrapper glass-panel">
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nome completo *</label>
+                        <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp (com DDD) *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(62) 99999-9999">
+                    </div>
+
+                    <div class="form-group radio-group">
+                        <label>Você comparecerá ao evento?</label>
+                        <div class="radio-options">
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="sim" checked required>
+                                <span class="custom-radio"></span>
+                                Sim
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="nao">
+                                <span class="custom-radio"></span>
+                                Não
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label"
+                            style="display: flex; align-items: center; cursor: pointer; font-weight: 400; color: var(--text-main);">
+                            <input type="checkbox" id="wants-notification" name="wants_notification"
+                                style="margin-right: 10px; width: 18px; height: 18px; cursor: pointer;">
+                            Desejo receber notificações por WhatsApp sobre a contagem regressiva
+                        </label>
+                    </div>
+
+                    <div class="form-group hidden" id="notification-frequency-group">
+                        <label for="notification-frequency">Com qual frequência?</label>
+                        <select id="notification-frequency" name="notification_frequency">
+                            <option value="15">A cada 15 dias</option>
+                            <option value="30">A cada 30 dias</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Qtd. de adultos (incluindo você)</label>
+                            <select id="adults" name="adults">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="kids">Qtd. de crianças (Até 7 anos)</label>
+                            <select id="kids" name="kids">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Observações (Restrições alimentares, etc.)</label>
+                        <textarea id="message" name="message" rows="3"
+                            placeholder="Deixe uma mensagem ou observação..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Confirmar Presença</button>
+                </form>
+                <div id="form-success" class="form-feedback hidden">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p>Obrigado! Sua resposta foi registrada e enviada para nosso email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Com amor, Sara e Davi <i class="fa-solid fa-heart"
+                    style="color: #ff6b6b; font-size: 0.8em; margin: 0 5px;"></i> 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
