@@ -105,16 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Usando FormSubmit para enviar o email silenciosamente
-        fetch("https://formsubmit.co/ajax/daviglima2@gmail.com", {
+        // URL do Google Apps Script (Você vai colar o link gerado aqui)
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzyewW01dStGG_dP4T88da8IHKSS0UOvkVn1m_bi2by6qHsjRjhA8vA3zByFlTI9p8CNw/exec";
+
+        // Caso a URL ainda não tenha sido configurada
+        if (scriptURL === "https://script.google.com/macros/s/AKfycbzyewW01dStGG_dP4T88da8IHKSS0UOvkVn1m_bi2by6qHsjRjhA8vA3zByFlTI9p8CNw/exec") {
+            alert("Aviso: A integração com o Google Sheets ainda precisa ser configurada. Siga o passo a passo que o assistente te enviou!");
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            return;
+        }
+
+        fetch(scriptURL, {
             method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
             body: JSON.stringify({
-                Assunto: `RSVP - ${name}`,
-                _cc: "enny.sara.ferreira@gmail.com",
                 Nome: name,
                 WhatsApp: whatsappNumber,
                 Comparecera: attendance === 'sim' ? 'Sim' : 'Não',
@@ -127,9 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => response.json())
             .then(data => {
-                // Mostra mensagem de sucesso na tela e esconde o form
-                rsvpForm.classList.add('hidden');
-                formSuccess.classList.remove('hidden');
+                if (data.result === 'success') {
+                    // Mostra mensagem de sucesso na tela e esconde o form
+                    rsvpForm.classList.add('hidden');
+                    formSuccess.classList.remove('hidden');
+                } else {
+                    throw new Error(data.error);
+                }
             })
             .catch(error => {
                 console.error('Erro ao enviar:', error);
