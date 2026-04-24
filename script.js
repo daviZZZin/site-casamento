@@ -108,13 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // URL do Google Apps Script (Você vai colar o link gerado aqui)
         const scriptURL = "https://script.google.com/macros/s/AKfycbzyewW01dStGG_dP4T88da8IHKSS0UOvkVn1m_bi2by6qHsjRjhA8vA3zByFlTI9p8CNw/exec";
 
-        // Caso a URL ainda não tenha sido configurada
-        if (scriptURL === "https://script.google.com/macros/s/AKfycbzyewW01dStGG_dP4T88da8IHKSS0UOvkVn1m_bi2by6qHsjRjhA8vA3zByFlTI9p8CNw/exec") {
-            alert("Aviso: A integração com o Google Sheets ainda precisa ser configurada. Siga o passo a passo que o assistente te enviou!");
-            submitBtn.innerText = originalBtnText;
-            submitBtn.disabled = false;
-            return;
-        }
+
 
         fetch(scriptURL, {
             method: "POST",
