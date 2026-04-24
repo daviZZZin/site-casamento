@@ -105,6 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Validação de Acompanhantes
+        if (attendance === 'sim') {
+            if ((parseInt(adults) > 1 || parseInt(kids) > 0) && message.trim() === "") {
+                alert("Por favor, insira o nome completo dos seus acompanhantes no campo de observações.");
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+                // Foca no campo de mensagem para facilitar
+                document.getElementById('message').focus();
+                return;
+            }
+        }
+
         // URL do Google Apps Script (Você vai colar o link gerado aqui)
         const scriptURL = "https://script.google.com/macros/s/AKfycbzyewW01dStGG_dP4T88da8IHKSS0UOvkVn1m_bi2by6qHsjRjhA8vA3zByFlTI9p8CNw/exec";
 
