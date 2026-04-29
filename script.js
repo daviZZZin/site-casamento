@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Contagem Regressiva ---
-    const countDownDate = new Date("Jun 27, 2026 19:30:00").getTime();
+    const countDownDate = new Date("Jul 4, 2026 19:30:00").getTime();
 
     const x = setInterval(function () {
         const now = new Date().getTime();
